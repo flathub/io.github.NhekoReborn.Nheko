@@ -152,7 +152,7 @@
           "commit": "975ce8906c42742dbb698fcf9fa15663c530df20",
           "tag": "v0.2.1",
           "type": "git",
-          "url": "https://github.com/Nheko-Reborn/mtxclient/archive/d5cc703848b44c1a9c543dc01355b7881f66ea81.tar.gz"
+          "url": "https://github.com/Nheko-Reborn/mtxclient.git"
         }
       ]
     },
