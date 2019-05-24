@@ -149,8 +149,9 @@
       "name": "mtxclient",
       "sources": [
         {
-          "sha256": "c56b0cfbe15157b96d429dd56dd88b7f6e33a06f670815336c6dd2aade8d54fc",
-          "type": "archive",
+          "commit": "975ce8906c42742dbb698fcf9fa15663c530df20",
+          "tag": "v0.2.1",
+          "type": "git",
           "url": "https://github.com/Nheko-Reborn/mtxclient/archive/d5cc703848b44c1a9c543dc01355b7881f66ea81.tar.gz"
         }
       ]
@@ -180,9 +181,10 @@
       "name": "nheko",
       "sources": [
         {
-          "sha256": "d596a57328fbcded784d7158b811df58ef8daedbf6dc9c80c456df1b6ed1fc25",
-          "type": "archive",
-          "url": "https://github.com/Nheko-Reborn/nheko/archive/7819fea9ff4c48aaab255d67e4172691ee25ca60.tar.gz"
+          "commit": "1b34b53afe766e8de3a127fb4085f7bee977f0da",
+          "type": "git",
+          "url": "https://github.com/Nheko-Reborn/nheko.git",
+          "tag": "v0.6.4"
         },
         {
           "dest": ".deps/lmdbxx",
