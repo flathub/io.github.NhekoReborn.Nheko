@@ -3,14 +3,13 @@
   "command": "nheko",
   "branch": "stable",
   "runtime": "org.kde.Platform",
-  "runtime-version": "5.12",
+  "runtime-version": "5.14",
   "sdk": "org.kde.Sdk",
   "rename-icon": "nheko",
   "rename-desktop-file": "nheko.desktop",
   "rename-appdata-file": "nheko.appdata.xml",
   "finish-args": [
     "--device=dri",
-    "--filesystem=home",
     "--share=ipc",
     "--share=network",
     "--socket=pulseaudio",
@@ -24,8 +23,15 @@
     "/bin/mdb*",
     "*.a"
   ],
+  "build-options" : {
+      "arch": {
+          "aarch64": {
+              "cxxflags": "-DBOOST_ASIO_DISABLE_EPOLL"
+          }
+      }
+  },
   "modules": [
-    {
+        {
       "name": "lmdb",
       "sources": [
         {
@@ -46,13 +52,13 @@
       "builddir": true,
       "config-opts": [
         "-DCMAKE_BUILD_TYPE=Release",
-	"-DCMARK_TESTS=OFF"
+    "-DCMARK_TESTS=OFF"
       ],
       "sources": [
         {
-          "sha256": "acc98685d3c1b515ff787ac7c994188dadaf28a2d700c10c1221da4199bae1fc",
+          "sha256": "2558ace3cbeff85610de3bda32858f722b359acdadf0c4691851865bb84924a6",
           "type": "archive",
-          "url": "https://github.com/commonmark/cmark/archive/0.28.3.tar.gz"
+          "url": "https://github.com/commonmark/cmark/archive/0.29.0.tar.gz"
         }
       ]
     },
@@ -81,21 +87,11 @@
       "name": "olm",
       "sources": [
         {
-          "commit": "730e5e719c6c6ace4e1862ceacf0bb4f7c626251",
+          "commit": "6753595300767dd70150831dbbe6f92d64e75038",
           "disable-shallow-clone": true,
-          "tag": "2.2.2",
+          "tag": "3.1.4",
           "type": "git",
           "url": "https://gitlab.matrix.org/matrix-org/olm.git"
-        },
-        {
-          "dest": ".",
-          "path": "cmake/CMakeLists.txt",
-          "type": "file"
-        },
-        {
-          "dest": "cmake",
-          "path": "cmake/OlmConfig.cmake.in",
-          "type": "file"
         }
       ]
     },
@@ -107,9 +103,9 @@
       "name": "nlohmann",
       "sources":[
         {
-          "sha256": "2de558ff3b3b32eebfb51cf2ceb835a0fa5170e6b8712b02be9c2c07fcfe52a1",
+          "sha256": "d51a3a8d3efbb1139d7608e28782ea9efea7e7933157e8ff8184901efd8ee760",
           "type": "archive",
-          "url": "https://github.com/nlohmann/json/archive/v3.2.0.tar.gz"
+          "url": "https://github.com/nlohmann/json/archive/v3.7.0.tar.gz"
         }
       ]
     },
@@ -117,25 +113,25 @@
       "name": "sodium",
       "sources": [
         {
-          "sha256": "eeadc7e1e1bcef09680fb4837d448fbdf57224978f865ac1c16745868fbd0533",
+          "sha256": "6f504490b342a4f8a4c4a02fc9b866cbef8622d5df4e5452b46be121e46636c1",
           "type": "archive",
-          "url": "https://github.com/jedisct1/libsodium/releases/download/1.0.16/libsodium-1.0.16.tar.gz"
+          "url": "https://github.com/jedisct1/libsodium/releases/download/1.0.18-RELEASE/libsodium-1.0.18.tar.gz"
         }
       ]
     },
     {
       "build-commands": [
-        "./bootstrap.sh --with-libraries=random,thread,system,iostreams,atomic,chrono,date_time,regex --prefix=/app",
-        "./b2 -d0 variant=release link=shared threading=multi --layout=system",
+        "./bootstrap.sh --with-libraries=thread,system,iostreams --prefix=/app",
+        "./b2 -d0 variant=release link=static threading=multi --layout=system",
         "./b2 -d0 install"
       ],
       "buildsystem": "simple",
       "name": "boost",
       "sources": [
         {
-          "sha256": "7f6130bc3cf65f56a618888ce9d5ea704fa10b462be126ad053e80e553d6d8b7",
+          "sha256": "59c9b274bc451cf91a9ba1dd2c7fdcaf5d60b1b3aa83f2c9fa143417cc660722",
           "type": "archive",
-          "url": "https://dl.bintray.com/boostorg/release/1.68.0/source/boost_1_68_0.tar.bz2"
+          "url": "https://dl.bintray.com/boostorg/release/1.72.0/source/boost_1_72_0.tar.bz2"
         }
       ]
     },
@@ -143,16 +139,16 @@
       "config-opts": [
         "-DBUILD_LIB_TESTS=OFF",
         "-DBUILD_LIB_EXAMPLES=OFF",
-        "-DCMAKE_BUILD_TYPE=Release"
+        "-DCMAKE_BUILD_TYPE=Release",
+    "-DBUILD_SHARED_LIBS=OFF"
       ],
-      "buildsystem": "cmake",
+      "buildsystem": "cmake-ninja",
       "name": "mtxclient",
       "sources": [
         {
-          "commit": "975ce8906c42742dbb698fcf9fa15663c530df20",
-          "tag": "v0.2.1",
-          "type": "git",
-          "url": "https://github.com/Nheko-Reborn/mtxclient.git"
+          "sha256": "0c2930b5861d93bab9a6515adca74ebaa78984119705d9b4372a9deb275dd30c",
+          "type": "archive",
+          "url": "https://github.com/Nheko-Reborn/mtxclient/archive/v0.3.0.tar.gz"
         }
       ]
     },
@@ -177,14 +173,15 @@
         "-DCMAKE_BUILD_TYPE=Release",
         "-DLMDBXX_INCLUDE_DIR=.deps/lmdbxx"
       ],
-      "buildsystem": "cmake",
+      "buildsystem": "cmake-ninja",
       "name": "nheko",
       "sources": [
         {
-          "commit": "1b34b53afe766e8de3a127fb4085f7bee977f0da",
+          "commit": "9d46eb123fcdf0b9e0538ffe277cb426d7310c40",
           "type": "git",
           "url": "https://github.com/Nheko-Reborn/nheko.git",
-          "tag": "v0.6.4"
+          "tag": "v0.7.0",
+          "skip": ["build-flatpak"]
         },
         {
           "dest": ".deps/lmdbxx",
