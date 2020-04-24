@@ -177,10 +177,9 @@
       "name": "nheko",
       "sources": [
         {
-          "commit": "14ce840649f201281017aac957b61b1f2118f5a1",
+          "commit": "a5d5ea188172aea2732237d387fff534864a4c88",
           "type": "git",
           "url": "https://github.com/Nheko-Reborn/nheko.git",
-          "tag": "v0.7.1",
           "skip": ["build-flatpak"]
         },
         {
