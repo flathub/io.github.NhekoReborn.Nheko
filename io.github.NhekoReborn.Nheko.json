@@ -87,9 +87,9 @@
       "name": "olm",
       "sources": [
         {
-          "commit": "6753595300767dd70150831dbbe6f92d64e75038",
+          "commit": "8a958beb483b41eda34622c778983421baa7b06d",
           "disable-shallow-clone": true,
-          "tag": "3.1.4",
+          "tag": "3.1.5",
           "type": "git",
           "url": "https://gitlab.matrix.org/matrix-org/olm.git"
         }
@@ -103,9 +103,9 @@
       "name": "nlohmann",
       "sources":[
         {
-          "sha256": "d51a3a8d3efbb1139d7608e28782ea9efea7e7933157e8ff8184901efd8ee760",
+          "sha256": "7d0edf65f2ac7390af5e5a0b323b31202a6c11d744a74b588dc30f5a8c9865ba",
           "type": "archive",
-          "url": "https://github.com/nlohmann/json/archive/v3.7.0.tar.gz"
+          "url": "https://github.com/nlohmann/json/archive/v3.8.0.tar.gz"
         }
       ]
     },
@@ -146,9 +146,9 @@
       "name": "mtxclient",
       "sources": [
         {
-          "sha256": "0c2930b5861d93bab9a6515adca74ebaa78984119705d9b4372a9deb275dd30c",
+          "sha256": "e4899cc4ce87397de2aef865e94ea2cdb8d9cb86253727e7d90532b925ecc770",
           "type": "archive",
-          "url": "https://github.com/Nheko-Reborn/mtxclient/archive/v0.3.0.tar.gz"
+          "url": "https://github.com/Nheko-Reborn/mtxclient/archive/v0.3.1.tar.gz"
         }
       ]
     },
@@ -177,9 +177,10 @@
       "name": "nheko",
       "sources": [
         {
-          "commit": "a5d5ea188172aea2732237d387fff534864a4c88",
+          "commit": "887ad25ab751e8cb87c98438e8e64ac8565a780c",
           "type": "git",
           "url": "https://github.com/Nheko-Reborn/nheko.git",
+          "tag": "v0.7.2
           "skip": ["build-flatpak"]
         },
         {
