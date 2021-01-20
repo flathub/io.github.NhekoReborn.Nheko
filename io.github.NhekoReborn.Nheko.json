@@ -3,7 +3,7 @@
   "command": "nheko",
   "branch": "stable",
   "runtime": "org.kde.Platform",
-  "runtime-version": "5.14",
+  "runtime-version": "5.15",
   "sdk": "org.kde.Sdk",
   "rename-icon": "nheko",
   "rename-desktop-file": "nheko.desktop",
@@ -73,9 +73,9 @@
       ],
       "sources": [
         {
-          "sha256": "3dbcbfd8c07e25f5e0d662b194d3a7772ef214358c49ada23c044c4747ce8b19",
+          "sha256": "5197b3147cfcfaa67dd564db7b878e4a4b3d9f3443801722b3915cdeced656cb",
           "type": "archive",
-          "url": "https://github.com/gabime/spdlog/archive/v1.1.0.tar.gz"
+          "url": "https://github.com/gabime/spdlog/archive/v1.8.1.tar.gz"
         }
       ]
     },
@@ -96,6 +96,23 @@
       ]
     },
     {
+      "config-opts": [
+        "-DCMAKE_BUILD_TYPE=Release",
+        "-DBUILD_TEST_APPLICATION=OFF",
+        "-DQTKEYCHAIN_STATIC=ON"
+      ],
+      "buildsystem": "cmake-ninja",
+      "name": "QtKeychain",
+      "sources": [
+        {
+          "commit": "815fe610353ff8ad7e2f1121c368a74df8db5eb7",
+          "tag": "v0.12.0",
+          "type": "git",
+          "url": "https://github.com/frankosterfeld/qtkeychain.git"
+        }
+      ]
+    },
+    {
       "config-opts":[
         "-DJSON_BuildTests=OFF"
       ],
@@ -106,16 +123,6 @@
           "sha256": "7d0edf65f2ac7390af5e5a0b323b31202a6c11d744a74b588dc30f5a8c9865ba",
           "type": "archive",
           "url": "https://github.com/nlohmann/json/archive/v3.8.0.tar.gz"
-        }
-      ]
-    },
-    {
-      "name": "sodium",
-      "sources": [
-        {
-          "sha256": "6f504490b342a4f8a4c4a02fc9b866cbef8622d5df4e5452b46be121e46636c1",
-          "type": "archive",
-          "url": "https://github.com/jedisct1/libsodium/releases/download/1.0.18-RELEASE/libsodium-1.0.18.tar.gz"
         }
       ]
     },
@@ -146,9 +153,9 @@
       "name": "mtxclient",
       "sources": [
         {
-          "sha256": "e4899cc4ce87397de2aef865e94ea2cdb8d9cb86253727e7d90532b925ecc770",
+          "sha256": "c02c0109c9bbfd15fc016c6770dec23809ba6ddb3c4f89a291e462baa3360863",
           "type": "archive",
-          "url": "https://github.com/Nheko-Reborn/mtxclient/archive/v0.3.1.tar.gz"
+          "url": "https://github.com/Nheko-Reborn/mtxclient/archive/v0.4.0.tar.gz"
         }
       ]
     },
@@ -177,10 +184,10 @@
       "name": "nheko",
       "sources": [
         {
-          "commit": "887ad25ab751e8cb87c98438e8e64ac8565a780c",
+          "commit": "a9faecea47a87a813450d110fcfd35fea8d91efa",
           "type": "git",
           "url": "https://github.com/Nheko-Reborn/nheko.git",
-          "tag": "v0.7.2",
+          "tag": "v0.8.0",
           "skip": ["build-flatpak"]
         },
         {
