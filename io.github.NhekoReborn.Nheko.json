@@ -252,7 +252,7 @@
       "name": "nheko",
       "sources": [
         {
-          "commit": "a9faecea47a87a813450d110fcfd35fea8d91efa",
+          "commit": "1a2517e8292bbfc1302e8a0e99bb9d1294a468d1",
           "type": "git",
           "url": "https://github.com/Nheko-Reborn/nheko.git",
           "tag": "v0.8.1",
