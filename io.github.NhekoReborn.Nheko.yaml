@@ -171,7 +171,7 @@ modules:
     sources:
       - type: git
         url: https://github.com/Nheko-Reborn/nheko.git
-        commit: 2baa0f9537caaa97109eebe9cd6edeb7c1d1fdaf
+        commit: 33ad65dc175ee75872aa18a4cb6730f7e7c06240
         skip:
           - build-flatpak
       - dest: .deps/lmdbxx
