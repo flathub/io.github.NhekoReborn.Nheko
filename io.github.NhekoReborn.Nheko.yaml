@@ -1,7 +1,9 @@
 id: io.github.NhekoReborn.Nheko
 command: nheko
 runtime: org.kde.Platform
-runtime-version: '5.15-21.08'
+#runtime-version: '5.15-21.08'
+# Runtime 5.15-21.08 breaks our arm64 builds, so we reverted for now
+runtime-version: '5.15'
 sdk: org.kde.Sdk
 rename-icon: nheko
 rename-desktop-file: nheko.desktop
