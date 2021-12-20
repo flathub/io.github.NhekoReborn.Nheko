@@ -80,9 +80,9 @@ modules:
     buildsystem: cmake-ninja
     name: olm
     sources:
-      - commit: 8656f1463c4e16366335fb468453a9455a366c78
+      - commit: 797183f27f1c8cdb9d4551aaa317bd13ff02401b
         disable-shallow-clone: true
-        tag: 3.2.6
+        tag: 3.2.8
         type: git
         url: https://gitlab.matrix.org/matrix-org/olm.git
   - buildsystem: meson
@@ -170,8 +170,8 @@ modules:
       - mkdir -p /app/bin/
       - cp libqtjdenticon.so /app/bin/
     sources:
-      - commit: 07604d2e83e9c97969db93af04d3ea548c6f2e89
-        tag: v0.2.1
+      - commit: 0346c228f1d544581dfd72a4dceb84f8714570dd
+        tag: v0.3.0
         type: git
         url: https://github.com/Nheko-Reborn/qt-jdenticon.git
   - buildsystem: meson
@@ -179,8 +179,8 @@ modules:
       - -Ddefault_library=static
     name: coeurl
     sources:
-      - commit: a08f619adaa1ccd34eb6315d6578eddae0d1cc9b
-        tag: v0.1.0
+      - commit: fa108b25a92b0e037723debc4388a300e737dc2d
+        tag: v0.1.1
         type: git
         url: https://nheko.im/nheko-reborn/coeurl.git
   - config-opts:
@@ -191,8 +191,8 @@ modules:
     buildsystem: cmake-ninja
     name: mtxclient
     sources:
-      - commit: eecc4e93f2137c658014f17cefd62ad569063769
-        tag: v0.6.0
+      - commit: 9be1d3615ad30395557ef2768215bc14fd6359bd
+        tag: v0.6.1
         type: git
         url: https://github.com/Nheko-Reborn/mtxclient.git
   - config-opts:
@@ -203,8 +203,8 @@ modules:
     name: nheko
     sources:
       - type: git
-        tag: v0.9.0
-        commit: f32acdd23fedda07f4f5e7c7ac44b86cba3336c4
+        tag: v0.9.1
+        commit: dfab0c92d74317e8d2536b91a658cbc7c42aad57
         url: https://github.com/Nheko-Reborn/nheko.git
       - dest: .deps/lmdbxx
         sha256: 5e12eb3aefe9050068af7df2c663edabc977ef34c9e7ba7b9d2c43e0ad47d8df
