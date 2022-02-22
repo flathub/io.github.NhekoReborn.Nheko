@@ -1,9 +1,7 @@
 id: io.github.NhekoReborn.Nheko
 command: nheko
 runtime: org.kde.Platform
-#runtime-version: '5.15-21.08'
-# Runtime 5.15-21.08 breaks our arm64 builds, so we reverted for now
-runtime-version: '5.15'
+runtime-version: '5.15-21.08'
 sdk: org.kde.Sdk
 rename-icon: nheko
 rename-desktop-file: nheko.desktop
@@ -191,8 +189,8 @@ modules:
     buildsystem: cmake-ninja
     name: mtxclient
     sources:
-      - commit: 9be1d3615ad30395557ef2768215bc14fd6359bd
-        tag: v0.6.1
+      - commit: dd2f46ad1fb5f45ea1a46a3d77b4e9a0d3c1438a
+        tag: v0.6.2
         type: git
         url: https://github.com/Nheko-Reborn/mtxclient.git
   - config-opts:
