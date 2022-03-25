@@ -132,6 +132,10 @@ modules:
         type: git
         url: https://gitlab.freedesktop.org/gstreamer/gstreamer.git
     config-opts:
+      - -Dtests=disabled
+      - -Dexamples=disabled
+      - -Dintrospection=disabled
+      - -Ddoc=disabled
       - -Dcompositor=enabled
       - -Dgl=enabled
       - -Dgood=enabled
