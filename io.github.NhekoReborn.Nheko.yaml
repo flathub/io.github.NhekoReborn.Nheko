@@ -154,8 +154,8 @@ modules:
   - buildsystem: meson
     name: gstreamer
     sources:
-      - commit: f0b045a69bb0b36515b84e3b64df9dc30c8f1e1a
-        tag: 1.20.0
+      - commit: ccf22e315cedf81e0075ab179ffb1b733da5206e
+        tag: 1.20.3
         type: git
         url: https://gitlab.freedesktop.org/gstreamer/gstreamer.git
     config-opts:
@@ -203,8 +203,8 @@ modules:
     buildsystem: cmake-ninja
     name: mtxclient
     sources:
-      - commit: 2a1cf15cbda4d3deb7986c9f3b38e6c7aabb0d6f
-        tag: v0.8.0
+      - commit: d4301e79862f5167806ecebd12746da21d6b3886
+        tag: v0.8.1
         type: git
         url: https://github.com/Nheko-Reborn/mtxclient.git
   - config-opts:
@@ -217,8 +217,8 @@ modules:
     name: nheko
     sources:
       - type: git
-        tag: v0.10.0
-        commit: 7df260f5677321ea90db51ed828e3ed7b136f35a
+        tag: v0.10.1
+        commit: 143d7c9b6a8e77d99d0d79c243f3c8f9ba9a7e27
         url: https://github.com/Nheko-Reborn/nheko.git
       - dest: .deps/lmdbxx
         sha256: 5e12eb3aefe9050068af7df2c663edabc977ef34c9e7ba7b9d2c43e0ad47d8df
