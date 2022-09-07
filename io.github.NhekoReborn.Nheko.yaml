@@ -224,3 +224,5 @@ modules:
         sha256: 5e12eb3aefe9050068af7df2c663edabc977ef34c9e7ba7b9d2c43e0ad47d8df
         type: archive
         url: https://github.com/hoytech/lmdbxx/archive/1.0.0.tar.gz
+      - type: patch
+        patch: a014b2f8d603c2191897bf19b78a5098c3e1c54c.patch

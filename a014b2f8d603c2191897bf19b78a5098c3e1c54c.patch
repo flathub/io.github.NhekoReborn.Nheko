@@ -1,0 +1,30 @@
+From a014b2f8d603c2191897bf19b78a5098c3e1c54c Mon Sep 17 00:00:00 2001
+From: Nicolas Werner <nicolas.werner@hotmail.de>
+Date: Tue, 6 Sep 2022 20:24:09 +0200
+Subject: [PATCH] Fix crash on empty private read receipts being received
+
+fixes #1180
+---
+ src/Cache.cpp | 9 +++++----
+ 1 file changed, 5 insertions(+), 4 deletions(-)
+
+diff --git a/src/Cache.cpp b/src/Cache.cpp
+index bf4853255..90e93bed0 100644
+--- a/src/Cache.cpp
++++ b/src/Cache.cpp
+@@ -1841,10 +1841,11 @@ Cache::saveState(const mtx::responses::Sync &res)
+                         }
+                     }
+                     if (userReceipts.count(mtx::events::ephemeral::Receipt::ReadPrivate)) {
+-                        auto ts = userReceipts.at(mtx::events::ephemeral::Receipt::ReadPrivate)
+-                                    .users.at(local_user_id);
+-                        if (ts.ts != 0)
+-                            receipts[event_id][local_user_id] = ts.ts;
++                        const auto &users =
++                          userReceipts.at(mtx::events::ephemeral::Receipt::ReadPrivate).users;
++                        if (auto ts = users.find(local_user_id);
++                            ts != users.end() && ts->second.ts != 0)
++                            receipts[event_id][local_user_id] = ts->second.ts;
+                     }
+                 }
+                 updateReadReceipt(txn, room.first, receipts);
