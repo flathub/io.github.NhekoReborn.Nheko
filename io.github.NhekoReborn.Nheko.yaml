@@ -196,8 +196,8 @@ modules:
     name: nheko
     sources:
       - type: git
-        tag: v0.11.0
-        commit: 3507698ea565d0fedc4cad98c7598a4c61a45241
+        tag: v0.11.1
+        commit: c13a9d3b16748a9a45bc9c5c9b20603849943d06
         url: https://github.com/Nheko-Reborn/nheko.git
       - dest: .deps/lmdbxx
         sha256: 5e12eb3aefe9050068af7df2c663edabc977ef34c9e7ba7b9d2c43e0ad47d8df
