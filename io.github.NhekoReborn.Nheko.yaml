@@ -182,8 +182,8 @@ modules:
     buildsystem: cmake-ninja
     name: mtxclient
     sources:
-      - commit: f30d77a719f3deb66b17b99f3585ee919dbbe120
-        tag: v0.9.0
+      - commit: a9a6087ae820c8fb9332422b094cab8e2301db25
+        tag: v0.9.2
         type: git
         url: https://github.com/Nheko-Reborn/mtxclient.git
   - config-opts:
@@ -196,8 +196,8 @@ modules:
     name: nheko
     sources:
       - type: git
-        tag: v0.11.1
-        commit: c13a9d3b16748a9a45bc9c5c9b20603849943d06
+        tag: v0.11.2
+        commit: 17ad97c5179fb9a1c62e20412bbbc11a75e56951
         url: https://github.com/Nheko-Reborn/nheko.git
       - dest: .deps/lmdbxx
         sha256: 5e12eb3aefe9050068af7df2c663edabc977ef34c9e7ba7b9d2c43e0ad47d8df
