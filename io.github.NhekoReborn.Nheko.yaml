@@ -115,12 +115,11 @@ modules:
     buildsystem: cmake-ninja
     name: libavif
     sources:
-      - sha256: 66e82854ceb84a3e542bc140a343bc90e56c68f3ecb4fff63e636c136ed9a05e
+      - sha256: 398fe7039ce35db80fe7da8d116035924f2c02ea4a4aa9f4903df6699287599c
         type: archive
-        url: https://github.com/AOMediaCodec/libavif/archive/refs/tags/v0.10.1.tar.gz
+        url: https://github.com/AOMediaCodec/libavif/archive/refs/tags/v1.0.1.tar.gz
   - config-opts:
       - -DCMAKE_BUILD_TYPE=Release
-      - -DWITH_EXAMPLES=OFF
       #- -DBUILD_SHARED_LIBS=OFF
     buildsystem: cmake-ninja
     name: libheif
