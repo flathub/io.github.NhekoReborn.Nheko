@@ -43,9 +43,9 @@ cleanup:
 modules:
   - name: lmdb
     sources:
-      - sha256: f3927859882eb608868c8c31586bb7eb84562a40a6bf5cc3e13b6b564641ea28
+      - sha256: dd70a8c67807b3b8532b3e987b0a4e998962ecc28643e1af5ec77696b081c9b0
         type: archive
-        url: https://github.com/LMDB/lmdb/archive/LMDB_0.9.22.tar.gz
+        url: https://github.com/LMDB/lmdb/archive/LMDB_0.9.31.tar.gz
     make-install-args:
       - prefix=/app
     no-autogen: true
@@ -70,9 +70,9 @@ modules:
       - -DCMAKE_BUILD_TYPE=Release
       - -DCMARK_TESTS=OFF
     sources:
-      - sha256: 6c7d2bcaea1433d977d8fed0b55b71c9d045a7cdf616e3cd2dce9007da753db3
+      - sha256: bbcb8f8c03b5af33fcfcf11a74e9499f20a9043200b8552f78a6e8ba76e04d11
         type: archive
-        url: https://github.com/commonmark/cmark/archive/0.30.2.tar.gz
+        url: https://github.com/commonmark/cmark/archive/0.31.0.tar.gz
   - name: spdlog
     buildsystem: cmake-ninja
     config-opts:
@@ -81,17 +81,17 @@ modules:
       - -DSPDLOG_BUILD_BENCH=0
       - -DSPDLOG_BUILD_TESTING=0
     sources:
-      - sha256: 5197b3147cfcfaa67dd564db7b878e4a4b3d9f3443801722b3915cdeced656cb
+      - sha256: 534f2ee1a4dcbeb22249856edfb2be76a1cf4f708a20b0ac2ed090ee24cfdbc9
         type: archive
-        url: https://github.com/gabime/spdlog/archive/v1.8.1.tar.gz
+        url: https://github.com/gabime/spdlog/archive/v1.13.0.tar.gz
   - config-opts:
       - -DCMAKE_BUILD_TYPE=Release
     buildsystem: cmake-ninja
     name: olm
     sources:
-      - commit: 92769cec711c604a1f682b95d6944578d2a1bb3d
+      - commit: 7e0c8277032e40308987257b711b38af8d77cc69
         disable-shallow-clone: true
-        tag: 3.2.12
+        tag: 3.2.16
         type: git
         url: https://gitlab.matrix.org/matrix-org/olm.git
   - buildsystem: meson
@@ -101,11 +101,9 @@ modules:
       - -Dvapi=false
       - -Dgtk_doc=false
       - -Dintrospection=false
-      # https://gitlab.gnome.org/GNOME/libsecret/-/issues/49
-      - -Dgcrypt=false
     sources:
-      - commit: 3fe635e64efd4b8dbc9ec3548b0bc8034c7665c4
-        tag: 0.20.4
+      - commit: 6b5a6c28afc6dd93c232a4907a87c881079ff91b
+        tag: 0.21.4
         type: git
         url: https://gitlab.gnome.org/GNOME/libsecret.git
   - config-opts:
@@ -115,18 +113,18 @@ modules:
     buildsystem: cmake-ninja
     name: libavif
     sources:
-      - sha256: 398fe7039ce35db80fe7da8d116035924f2c02ea4a4aa9f4903df6699287599c
+      - sha256: dc56708c83a4b934a8af2b78f67f866ba2fb568605c7cf94312acf51ee57d146
         type: archive
-        url: https://github.com/AOMediaCodec/libavif/archive/refs/tags/v1.0.1.tar.gz
+        url: https://github.com/AOMediaCodec/libavif/archive/refs/tags/v1.0.4.tar.gz
   - config-opts:
       - -DCMAKE_BUILD_TYPE=Release
       #- -DBUILD_SHARED_LIBS=OFF
     buildsystem: cmake-ninja
     name: libheif
     sources:
-      - sha256: e1ac2abb354fdc8ccdca71363ebad7503ad731c84022cf460837f0839e171718
+      - sha256: 8390baf4913eda0a183e132cec62b875fb2ef507ced5ddddc98dfd2f17780aee
         type: archive
-        url: https://github.com/strukturag/libheif/releases/download/v1.12.0/libheif-1.12.0.tar.gz
+        url: https://github.com/strukturag/libheif/releases/download/v1.17.6/libheif-1.17.6.tar.gz
   - config-opts:
       - -DCMAKE_BUILD_TYPE=Release
       - -DKIMAGEFORMATS_HEIF=ON
@@ -139,13 +137,14 @@ modules:
         url: https://invent.kde.org/frameworks/kimageformats.git
   - config-opts:
       - -DCMAKE_BUILD_TYPE=Release
+      - -DBUILD_WITH_QT6=ON
       - -DBUILD_TEST_APPLICATION=OFF
-      - -DQTKEYCHAIN_STATIC=ON
+      - -DBUILD_SHARED_LIBS=OFF
     buildsystem: cmake-ninja
     name: QtKeychain
     sources:
-      - commit: f59ac26be709fd2d8d7a062fab1cf1e67a93806c
-        tag: v0.13.1
+      - commit: 8eac9889775ca45c106d077bb0d3744754a1570a
+        tag: 0.14.2
         type: git
         url: https://github.com/frankosterfeld/qtkeychain.git
   - config-opts:
@@ -153,30 +152,34 @@ modules:
     buildsystem: cmake
     name: nlohmann
     sources:
-      - sha256: 1155fd1a83049767360e9a120c43c578145db3204d2b309eba49fbbedd0f4ed3
+      - sha256: 0d8ef5af7f9794e3263480193c491549b2ba6cc74bb018906202ada498a79406
         type: archive
-        url: https://github.com/nlohmann/json/archive/v3.10.4.tar.gz
+        url: https://github.com/nlohmann/json/archive/v3.11.3.tar.gz
   - buildsystem: simple
     build-commands:
       - make static
       - make prefix=/app static-install
     name: re2
     sources:
-      - sha256: f89c61410a072e5cbcf8c27e3a778da7d6fd2f2b5b1445cd4f4508bee946ab0f
+      - sha256: 7a9a4824958586980926a300b4717202485c4b4115ac031822e29aa4ef207e48
         type: archive
-        url: https://github.com/google/re2/archive/refs/tags/2022-06-01.tar.gz
+        # TODO: Update this once Abseil dependency can be added
+        url: https://github.com/google/re2/archive/refs/tags/2023-03-01.tar.gz
   - buildsystem: meson
     name: gstreamer
     sources:
-      - commit: f7806a854aad960eae3288db4a67a574f92428fe
-        tag: 1.20.5
+      - commit: 0d0a1d9d16d1eb0f5355202c9f8f3ae6df19cf3b
+        tag: 1.24.1
         type: git
         url: https://gitlab.freedesktop.org/gstreamer/gstreamer.git
     config-opts:
       - --auto-features=disabled
       -  -Dgood=enabled
-      -  -Dgst-plugins-good:qt5=enabled
-      -  -Dqt5=enabled
+      -  -Dgst-plugins-good:qt-egl=enabled
+      -  -Dgst-plugins-good:qt-wayland=enabled
+      -  -Dgst-plugins-good:qt-x11=enabled
+      -  -Dgst-plugins-good:qt6=enabled
+      -  -Dqt6=enabled
       -  -Dbase=enabled
       -  -Dgst-plugins-base:gl=enabled
       -  -Dgst-plugins-base:gl_platform=glx,egl
@@ -199,8 +202,8 @@ modules:
       - -Ddefault_library=static
     name: coeurl
     sources:
-      - commit: 2a20a129240a1a017b37b6874faab499ca4e523b
-        tag: v0.3.0
+      # TODO: Use a tagged release when it's available
+      - commit: 3007387745cf84138d0855e0f04ff94261fc7175
         type: git
         url: https://nheko.im/nheko-reborn/coeurl.git
   - config-opts:
