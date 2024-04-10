@@ -231,6 +231,8 @@ modules:
         tag: v0.11.3
         commit: d27e42dec6b6255246bd488e12ea2662018f12ab
         url: https://github.com/Nheko-Reborn/nheko.git
+      - type: patch
+        path: appdata-fix.patch
       - dest: .deps/lmdbxx
         sha256: 5e12eb3aefe9050068af7df2c663edabc977ef34c9e7ba7b9d2c43e0ad47d8df
         type: archive
