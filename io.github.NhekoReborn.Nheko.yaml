@@ -168,13 +168,16 @@ modules:
   - buildsystem: meson
     name: gstreamer
     sources:
-      - commit: f7806a854aad960eae3288db4a67a574f92428fe
-        tag: 1.20.5
+      - commit: e49b86e82ee5521e7edf62113b482368e72f9cf2
+        tag: 1.22.11
         type: git
         url: https://gitlab.freedesktop.org/gstreamer/gstreamer.git
     config-opts:
       - --auto-features=disabled
       -  -Dgood=enabled
+      -  -Dgst-plugins-good:qt-egl=enabled
+      -  -Dgst-plugins-good:qt-wayland=enabled
+      -  -Dgst-plugins-good:qt-x11=enabled
       -  -Dgst-plugins-good:qt5=enabled
       -  -Dqt5=enabled
       -  -Dbase=enabled
