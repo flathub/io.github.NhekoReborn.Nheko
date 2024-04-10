@@ -124,9 +124,9 @@ modules:
     buildsystem: cmake-ninja
     name: libheif
     sources:
-      - sha256: e1ac2abb354fdc8ccdca71363ebad7503ad731c84022cf460837f0839e171718
+      - sha256: 8390baf4913eda0a183e132cec62b875fb2ef507ced5ddddc98dfd2f17780aee
         type: archive
-        url: https://github.com/strukturag/libheif/releases/download/v1.12.0/libheif-1.12.0.tar.gz
+        url: https://github.com/strukturag/libheif/releases/download/v1.17.6/libheif-1.17.6.tar.gz
   - config-opts:
       - -DCMAKE_BUILD_TYPE=Release
       - -DKIMAGEFORMATS_HEIF=ON
