@@ -202,8 +202,8 @@ modules:
       - -Ddefault_library=static
     name: coeurl
     sources:
-      # TODO: Use a tagged release when it's available
-      - commit: 3007387745cf84138d0855e0f04ff94261fc7175
+      - commit: f49993e6ad3b2f4fa6503f46d547351fa276ac84
+        tag: v0.3.1
         type: git
         url: https://nheko.im/nheko-reborn/coeurl.git
   - config-opts:
