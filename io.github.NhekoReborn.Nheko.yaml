@@ -172,6 +172,7 @@ modules:
         tag: 1.22.11
         type: git
         url: https://gitlab.freedesktop.org/gstreamer/gstreamer.git
+        disable-submodules: true
     config-opts:
       - --auto-features=disabled
       -  -Dgood=enabled
