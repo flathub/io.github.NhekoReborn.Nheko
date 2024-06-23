@@ -1,7 +1,7 @@
 id: io.github.NhekoReborn.Nheko
 command: io.github.NhekoReborn.Nheko
 runtime: org.kde.Platform
-runtime-version: '5.15-22.08'
+runtime-version: '5.15-23.08'
 sdk: org.kde.Sdk
 finish-args:
   - --device=dri
@@ -124,9 +124,9 @@ modules:
     buildsystem: cmake-ninja
     name: libheif
     sources:
-      - sha256: e1ac2abb354fdc8ccdca71363ebad7503ad731c84022cf460837f0839e171718
+      - sha256: 8390baf4913eda0a183e132cec62b875fb2ef507ced5ddddc98dfd2f17780aee
         type: archive
-        url: https://github.com/strukturag/libheif/releases/download/v1.12.0/libheif-1.12.0.tar.gz
+        url: https://github.com/strukturag/libheif/releases/download/v1.17.6/libheif-1.17.6.tar.gz
   - config-opts:
       - -DCMAKE_BUILD_TYPE=Release
       - -DKIMAGEFORMATS_HEIF=ON
@@ -168,13 +168,16 @@ modules:
   - buildsystem: meson
     name: gstreamer
     sources:
-      - commit: f7806a854aad960eae3288db4a67a574f92428fe
-        tag: 1.20.5
+      - commit: e49b86e82ee5521e7edf62113b482368e72f9cf2
+        tag: 1.22.11
         type: git
         url: https://gitlab.freedesktop.org/gstreamer/gstreamer.git
     config-opts:
       - --auto-features=disabled
       -  -Dgood=enabled
+      -  -Dgst-plugins-good:qt-egl=enabled
+      -  -Dgst-plugins-good:qt-wayland=enabled
+      -  -Dgst-plugins-good:qt-x11=enabled
       -  -Dgst-plugins-good:qt5=enabled
       -  -Dqt5=enabled
       -  -Dbase=enabled
@@ -199,8 +202,8 @@ modules:
       - -Ddefault_library=static
     name: coeurl
     sources:
-      - commit: 2a20a129240a1a017b37b6874faab499ca4e523b
-        tag: v0.3.0
+      - commit: f49993e6ad3b2f4fa6503f46d547351fa276ac84
+        tag: v0.3.1
         type: git
         url: https://nheko.im/nheko-reborn/coeurl.git
   - config-opts:
@@ -228,6 +231,8 @@ modules:
         tag: v0.11.3
         commit: d27e42dec6b6255246bd488e12ea2662018f12ab
         url: https://github.com/Nheko-Reborn/nheko.git
+      - type: patch
+        path: appdata-fix.patch
       - dest: .deps/lmdbxx
         sha256: 5e12eb3aefe9050068af7df2c663edabc977ef34c9e7ba7b9d2c43e0ad47d8df
         type: archive
